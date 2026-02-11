@@ -1,0 +1,10 @@
+{
+  "marketplace_id": "plan-medi-marketplace",
+  "display_name": "Plan Medi - 의료 서비스 기획 도우미",
+  "description": "사내 기획자를 위한 의료 서비스 기획 지원 플러그인. 기획 문서 작성, 요구사항 정리, 일정 관리 등을 도와줍니다.",
+  "category": "productivity",
+  "tags": ["medical", "planning", "healthcare", "기획"],
+  "repository": "k984530/plan-medi-plugin",
+  "icon": "🏥",
+  "min_claude_code_version": "1.0.0"
+}

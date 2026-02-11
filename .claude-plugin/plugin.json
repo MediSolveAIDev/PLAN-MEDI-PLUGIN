@@ -1,0 +1,11 @@
+{
+  "name": "plan-medi",
+  "version": "0.1.0",
+  "description": "사내 기획자용 의료 서비스 기획 지원 플러그인",
+  "author": "k984530",
+  "skills": ["skills/example/SKILL.md"],
+  "commands": ["commands/example.md"],
+  "agents": ["agents/medical-planner.md"],
+  "hooks": "hooks/hooks.json",
+  "mcp": ".mcp.json"
+}
