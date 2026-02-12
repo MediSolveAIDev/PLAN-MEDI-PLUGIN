@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Mermaid Diagram Viewer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="diagram">
+        <pre class="mermaid" id="mermaid-source"></pre>
+    </div>
+
+    <script type="module">
+        import { initMermaid, classDefs, renderMermaid, postProcess } from './mermaid-theme.js';
+
+        // URL 파라미터에서 .mmd 파일명 추출
+        const params = new URLSearchParams(location.search);
+        const file = params.get('file');
+
+        if (!file) {
+            document.getElementById('mermaid-source').textContent =
+                'Error: ?file= 파라미터가 필요합니다.\n예: viewer.html?file=patient-appointment-flow';
+            throw new Error('file parameter is required');
+        }
+
+        // .mmd 파일 로드
+        const mmdPath = `../${file.replace(/\.mmd$/, '')}.mmd`;
+        const res = await fetch(mmdPath);
+        if (!res.ok) {
+            document.getElementById('mermaid-source').textContent =
+                `Error: "${file}.mmd" 파일을 찾을 수 없습니다.`;
+            throw new Error(`Failed to fetch ${mmdPath}: ${res.status}`);
+        }
+
+        let code = await res.text();
+
+        // classDef / linkStyle 가 없으면 공통 정의 주입
+        if (!code.includes('classDef ')) {
+            code = code.trimEnd() + '\n' + classDefs + '\n';
+        }
+
+        document.getElementById('mermaid-source').textContent = code;
+
+        // 렌더링
+        initMermaid();
+        await renderMermaid();
+        postProcess();
+
+        // 타이틀 업데이트
+        const titleMatch = code.match(/title:\s*(.+)/);
+        if (titleMatch) {
+            document.title = titleMatch[1].trim();
+        }
+    </script>
+</body>
+</html>

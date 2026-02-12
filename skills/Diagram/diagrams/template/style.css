@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'OngleafParkDahyun';
+    src: url('../fonts/OngleafParkDahyun.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding: 40px 20px;
+    background: #ffffff;
+    font-family: 'OngleafParkDahyun', sans-serif;
+}
+
+#diagram {
+    max-width: 900px;
+}
