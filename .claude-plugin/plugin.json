@@ -1,6 +1,6 @@
 {
   "name": "plan-medi-plugin",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Medisolveai 사내 기획 플러그인",
   "author": {
     "name": "k984530"
@@ -8,18 +8,6 @@
   "repository": "https://github.com/MediSolveAIDev/PLAN-MEDI-PLUGIN",
   "license": "MIT",
   "keywords": ["medical", "planning", "기획"],
-  "commands": [
-    {
-      "name": "Diagram",
-      "description": "Mermaid 플로우차트 다이어그램 생성",
-      "path": "commands/Diagram.md"
-    }
-  ],
-  "skills": [
-    {
-      "name": "Diagram",
-      "description": "Mermaid 플로우차트 다이어그램 생성 및 공통 템플릿 적용",
-      "path": "skills/Diagram/SKILL.md"
-    }
-  ]
+  "commands": "./commands",
+  "skills": "./skills"
 }

@@ -6,13 +6,13 @@
   },
   "metadata": {
     "description": "Medisolveai 사내 기획 플러그인. 기획 문서 작성, 요구사항 정리, 일정 관리를 지원합니다.",
-    "version": "0.1.2"
+    "version": "0.1.3"
   },
   "plugins": [
     {
       "name": "plan-medi-plugin",
       "description": "Medisolveai 사내 기획 플러그인. 기획 문서 작성, 요구사항 정리, 일정 관리를 지원합니다.",
-      "version": "0.1.2",
+      "version": "0.1.3",
       "author": {
         "name": "Medisolveai"
       },
